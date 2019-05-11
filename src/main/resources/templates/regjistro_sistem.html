@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Home Page</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+                     
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+   <link rel="stylesheet" href="/css/styles.css"/>
+   <link rel="stylesheet" href="/css/newstyle.css"/>
+        
+</head>
+<body style=" margin: 0 px;">
+
+
+<div th:insert="Menu :: navbar"  class="container-fluid" style="padding: 0%; padding-left: 0%; padding-right: 0%; margin: 0 px; width: 100%;"></div>
+
+
+
+	<h1>Regjistrohu ne sistem </h1>
+    <form th:action="@{'/student/sitem/regjistrosistem'}" th:object="${regjistroPerdoruesin}" method="post" class="optimizim">
+    	
+    	<table>
+    	<tbody>
+    	<tr>
+    	<td>
+        <label>Name: </label>
+        </td>
+        <td> <input type="text" th:field="*{name}" /></td>
+       	
+        
+        </tr>
+        
+        <tr>
+    	<td>
+        <label> Last name:</label>
+        </td>
+        
+        <td>
+        <input type="text" th:field="*{lastName}" />
+        
+         </td>
+         </tr>
+         
+         <tr>
+        <td>
+        
+        <label>E-mail: </label>
+        </td>
+        <td>
+        <input type="email" th:field="*{email}" />
+        
+       </td>
+          </tr>
+         
+          <tr>
+    	<td>
+        <label> Password:</label>
+        
+        </td>
+        <td>
+        <input type="password" th:field="*{pasword}" />
+         </td>
+        </tr>
+        
+        <tr>
+        <td>
+       <label> Role for studenns is ROLE_USER: </label>
+       </td>
+       <td>
+       <input type="text" th:field="*{role}" />
+       </td>
+       </tr>
+       
+       <tr>
+       <td>
+       <label>Enabled :</label>
+       </td>
+       <td>
+         <input type="text" th:field="*{enabled}" />
+         </td>
+         </tr>
+         
+         <tr>
+         <td>
+       <input type="submit" value="Submit" /> 
+        </td>
+        <td>
+        
+        <input type="reset" value="Reset" />
+        </td>
+        </tr>
+        
+        </tbody>
+        </table>
+    </form>
+    
+    
+</body>
+</html>

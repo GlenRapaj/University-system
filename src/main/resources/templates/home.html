@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Sistem Universiteti</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+        
+         <link rel="stylesheet" href="/css/styles.css"/>
+    
+   <link rel="stylesheet" href="/css/newstyle.css"/>
+   
+</head>
+<body style=" margin: 0 px;">
+   
+     
+    
+    <div th:fragment="slideshow"> 
+       <p class="informacion"> Universiteti fillon ne 8/1/2019
+        <a th:href="@{'/student/data/abaut/'}" th:text=" 'lexo me shume...'"></a>    </p>
+   <br/>   <br/>
+   
+    <p class="informacion"> Thirrje per pedagoge te jashtem
+    <a th:href="@{'/student/data/abaut/'}" th:text=" 'lexo me shume...'"></a> 
+    </p>
+   <br/>   <br/>
+   
+    <p class="informacion"> Thirrje per studentet te aplikojne per praktike.
+    <a th:href="@{'/student/data/abaut/'}" th:text="' lexo me shume...'"></a> 
+    </p>
+   <br/>   <br/>
+    
+    
+     </div>
+        
+          
+        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <script src="js/custom.js"></script>
+    
+    
+    
+</body>
+</html>

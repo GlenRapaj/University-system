@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Sistem Universiteti</title> 
+    
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+   
+               
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    
+      
+         
+  <link rel="stylesheet" href="../../static/css/Preetty-Footer.css" th:href="@{'css/Preetty-Footer'}"  type="text/css" media="screan"/>
+  <link rel="stylesheet" href="../../static/css/Preetty-Header.css" th:href="@{'css/reetty-Header'}"  type="text/css" media="screan"/>
+  <link rel="stylesheet" href="../../static/css/styles.css" th:href="@{'css/styles'}"  type="text/css" media="screan"/>
+        
+       <link rel="stylesheet" href="/css/styles.css"/>
+    
+    <link rel="stylesheet" href="/css/newstyle.css"/>
+    
+        
+</head>
+<body style=" margin: 0 px;" >
+
+<div th:insert="Menu :: navbar"  class="container-fluid" style="padding: 0%; padding-left: 0%; padding-right: 0%; margin: 0 px; width: 100%;"></div>
+
+
+<table class="table-responsive table-striped optimizim">
+ <thead>
+
+		<tr> 
+				
+				<th scope="col" th:text = "' ID '" >  ID </th>
+				
+				<th scope="col" th:text = "' Emeri '" > Emeri  </th>
+				
+			<th scope="col" th:text = "' Email '" > Email </th>
+				
+			
+				
+				
+				
+			<th scope="col" th:text = "' Emri fakultetit '" >  Emri fakultetit  </th>
+				
+			<th scope="col" th:text = "' Emri i departamentit '" >  Emri i departamentit  </th>
+				
+			<th scope="col" th:text = "' Adresa '" > Adresa </th>
+				
+				
+				
+			
+				
+			<th scope="col" th:text = "' cregjistro studentin perkates '" > cregjistro studentin perkates </th>
+				
+		<th scope="col" th:text = "' Te dhenat e stdentit '" >  Te dhenat e stdentit </th>
+		
+		</tr>
+		
+		     </thead>  
+		     
+		
+		
+		<tr th:each="prod : ${listaStudenteve} "> 
+				
+				<td th:text=" ' ' + ${prod.id} + ' ' ">   </td>
+				
+				<td th:text=" ' ' + ${prod.name}">   </td>
+				
+				<td th:text=" ' ' + ${prod.lastName}">   </td>
+				
+				
+				
+				
+				
+				<td th:text=" ' ' + ${prod.depID.facultyName}">   </td>
+				
+				<td th:text=" ' ' + ${prod.depID.departamentName}">   </td>
+				
+				<td th:text=" ' ' + ${prod.depID.adr}">   </td>
+				
+				
+				
+				
+				
+				<td >
+						
+						 <form th:action=" @{'/student/stdent/' + ${prod.id} } "  th:method="delete">
+							<input class="btn btn-danger" type="submit" value=" Cregjistro studentin!" />
+						</form> 
+						
+				</td>  
+				
+				<td > <a class="btn btn-default" th:href="@{'/student/data/' + ${prod.id}} " th:text=" ' Shiko te dhenat e stdentit ' ">   </a>  </td>
+				
+				
+				
+		</tr>
+
+</table>
+
+
+
+<br/>  <br/> <br/>
+
+
+     
+   
+    
+    <div style="width: 100%;">
+    <ul class="list-group list-group-flush listlink">
+    
+		 
+		    <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mesatarja/mat' }" th:text=" ' Shiko mesataren e studenteve ne lenden matematike. ' ">   </a> 
+		    </li>
+		     
+		    <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mesatarja/calc'  }" th:text=" ' Shiko mesataren e studenteve ne lenden calcus.  ' ">   </a> 
+		    </li>
+		     
+		    <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mesatarja/prog' } " th:text=" ' Shiko mesataren e studenteve ne lenden programim.  ' ">   </a> 
+		    </li>
+		     
+		    <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mesatarja/stat' } " th:text=" ' Shiko mesataren e studenteve ne lenden statistike.  ' ">   </a> 
+		    </li>
+		    
+    </ul>
+    
+    <br/>
+    
+    <ul class="list-group list-group-flush listlink">
+    
+		         <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/ngelen/mat' }" th:text=" ' Shiko sa student kane ngelur ne lenden matematike. ' ">   </a> 
+		    </li>
+		     
+		     
+		      <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/ngelen/calc' }" th:text=" ' Shiko sa student kane ngelur ne lenden calcus. ' ">   </a> 
+		    </li>
+		    
+		    
+		      <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/ngelen/prog' }" th:text=" ' Shiko sa student kane ngelur ne lenden programim. ' ">   </a> 
+		    </li>
+		    
+		    
+		      <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/ngelen/stat' }" th:text=" ' Shiko sa student kane ngelur ne lenden statistike. ' ">   </a> 
+		    </li>
+		    
+      </ul>
+      
+      
+    
+    <br/>
+    
+    
+    
+    <ul class="list-group list-group-flush listlink">
+    
+    
+		    
+		         <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mungojne/mat' }" th:text=" ' Shiko sa student kane munguar ne provim ne lenden matematike. ' ">   </a> 
+		    </li>
+		     
+		     
+		      <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mungojne/calc' }" th:text=" ' Shiko sa student kane munguar ne provim ne lenden calcus. ' ">   </a> 
+		    </li>
+		    
+		    
+		      <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mungojne/prog' }" th:text=" ' Shiko sa student kane munguar ne provim ne lenden programim. ' ">   </a> 
+		    </li>
+		    
+		    
+		      <li class="listlink">
+		   		 <a class="btn btn-default listlink" th:href="@{'/student/mungojne/stat' }" th:text=" ' Shiko sa student kane munguar ne provim ne lenden statistike. ' ">   </a> 
+		    </li>
+		    
+		    
+		   <li class="listlink">
+		    
+		 	 <a class="btn btn-default listlink" th:href="@{'/student/regjistro' }" th:text=" ' Regjisdtro student te ri ne fakultet. ' ">   </a> 
+         </li>
+		    
+    
+    </ul>
+    </div>
+     
+
+ 
+<br/>  <br/> <br/>
+ 
+     
+		
+    <div th:insert="home :: slideshow">  </div>
+    
+   
+    
+<div th:insert="footer :: foter">  </div>
+     
+ 
+		
+       
+        
+          
+       
+</body>
+</html>

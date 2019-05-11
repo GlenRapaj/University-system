@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Sistem Universiteti</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+                     
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    
+       <link rel="stylesheet" href="/css/styles.css"/>
+    
+   <link rel="stylesheet" href="/css/newstyle.css"/>
+  
+        
+</head>
+<body style=" margin: 0 px;">
+
+
+<div th:insert="Menu :: navbar"  class="container-fluid" style="padding: 0%; padding-left: 0%; padding-right: 0%; margin: 0 px; width: 100%;"></div>
+
+
+
+   <p th:text="  ${Mesatare} "> </p>
+   
+  
+     
+<br/>  <br/> <br/>
+     
+    
+    <div th:insert="home :: slideshow">  </div>
+    
+   
+    
+<div th:insert="footer :: foter">  </div>
+     
+ 
+     
+    
+       
+        
+          <div>
+        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <script src="js/custom.js"></script>
+    </div>
+    
+</body>
+</html>

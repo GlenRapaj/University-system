@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Sistem Universiteti</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+        rel="stylesheet">
+        
+     <link href="css/custom.css"
+        rel="stylesheet">
+        
+        
+                     
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ 
+  
+         
+      
+       <link rel="stylesheet" href="/css/styles.css"/>
+    
+   
+  <link rel="stylesheet" href="/css/newstyle.css"/>
+  
+        
+</head>
+<body style=" margin: 0 px;">
+
+<!--     -->
+
+<div th:insert="Menu :: navbar"  class="container-fluid" style="padding: 0%; padding-left: 0%; padding-right: 0%; margin: 0 px; width: 100%;" ></div>
+
+
+
+
+    <div> 
+    
+    <ul class="list-group list-group-flush" th:if="${student} != null">
+    
+			    <li class="list-group-item" th:text= "${student.id} " > </li>
+			    <li class="list-group-item" th:text= " '   Emri: ' + ${student.name}" > </li>
+			    <li class="list-group-item" th:text= " '  Mbiemri: ' +  ${student.lastName}"> </li>
+			    <li class="list-group-item" th:text= " '  Grupi: ' + ${student.grupi}"> </li>
+			      <li class="list-group-item" th:text= "  '  Nota Mat: ' + ${student.marksMath}"> </li>
+			       <li class="list-group-item" th:text= "  '  Nota Calcus: '  + ${student.marksCalcus}"> </li>
+			       <li class="list-group-item" th:text= " '  Nota Programim: ' +  ${student.marksPrograming}"> </li>
+			        <li class="list-group-item" th:text= "  '  Nota Statistik: ' + ${student.marksStatistics}"> </li>
+			        
+			        <li class="list-group-item" th:text= " '  Id departamentit: ' + ${student.depID.id}"> </li>
+			          <li class="list-group-item" th:text= "  '  Emri fakultetit: ' + ${student.depID.facultyName}"> </li>
+			          <li class="list-group-item" th:text= "  '  Emri departamentit: ' + ${student.depID.departamentName}"> </li>
+			          <li class="list-group-item" th:text= "  '  Adresa: ' + ${student.depID.adr}"> </li>
+			          
+			         <li class="list-group-item" th:text= "  '  Data fillimit te studimeve: ' + ${student.doj}"> </li>
+			          <li class="list-group-item" th:text= "  '  Pagesa: ' + ${student.payment}"> </li>
+			          
+    
+    </ul>
+    
+    
+    </div>
+    
+    
+    
+    <br/>    <br/>  <br/>
+    
+    <div th:insert="home :: slideshow" >  </div>
+    
+     <br/>
+    
+    <br/>  <br/>  <br/>
+    
+<div th:insert="footer :: foter" >  </div>
+     
+     
+ 
+        
+        
+          
+        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <script src="js/custom.js"></script>
+           
+    <script src="css/Preetty-Footer"></script>
+     <script src="css/Preetty-Header"></script>
+      <script src="css/styles"></script>
+    
+</body>
+</html>

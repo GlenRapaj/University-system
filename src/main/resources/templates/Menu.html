@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Home Page</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+        
+        
+         <link rel="stylesheet" href="/css/styles.css"/>
+          <link rel="stylesheet" href="/css/newstyle.css"/>
+        
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        
+</head>
+<body>
+   
+      
+       
+      <!-- fixed-top style="background-color: #e3f2fd; " navbar-dark-->
+       
+    <nav th:fragment="navbar" class="navbar navbar-expand-lg   visible-xs-block visible-sm-block visible-md-block visible-lg-block" id="menu" >
+    <div  class="container-fluid" style="width: 100%;">
+    
+  <a class="navbar-brand" href="#"> University system  </a>
+  
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  
+  <div class="collapse navbar-collapse" id="navbarText" style="width: 100%;">
+    
+    
+    <ul class="navbar-nav mr-auto">
+    
+    
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{'/student/home'}" th:text="Administrata "> Administrata  <span class="sr-only">(current)</span></a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{'/student/data/abaut/'}" th:text=" 'Rreth Universitetit' ">Rreth Universitetit </a>
+      </li>
+       
+      <li class="nav-item">
+        <a class="nav-link"  th:href="@{'/student/'}" th:text=" 'Faqja kryesore'  "> Faqja kryesore </a>
+      </li>
+      
+     
+       
+      
+    </ul>
+    <span class="navbar-text">
+     
+        <a class="nav-link "  th:href="@{'/student/sitem/regjistrosistem'}" th:text=" ' Regjistrohu ne sistem '  "> Regjistrohu ne sistem </a>
+      
+      
+     
+    </span>
+    
+   <span class="navbar-text">
+     
+      
+      <a class="btn btn-success"   th:href="@{/logout}" > Sign Out </a>
+       
+        
+     
+    </span>
+    <!--  
+    <form th:action="@{/logout}" method="post">
+            <input class="btn btn-success" type="submit" value="Sign Out"/>
+        </form>
+        
+        
+         <li class="nav-item">
+        <a class="nav-link"  th:href="@{'/student/sitem/regjistrosistem'}" th:text=" 'Regjistrohu ne sistem'  "> Regjistrohu ne sistem </a>
+      </li>
+      
+        -->
+  </div>
+  
+  </div>
+</nav>
+     
+   
+     
+     
+</body>
+</html>

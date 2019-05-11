@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico"/>
+
+    <title>Sistem Universiteti</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        
+         
+  <link rel="stylesheet" href="../../static/css/Preetty-Footer.css" th:href="@{'css/Preetty-Footer'}"  type="text/css" media="screan"/>
+  <link rel="stylesheet" href="../../static/css/Preetty-Header.css" th:href="@{'css/reetty-Header'}"  type="text/css" media="screan"/>
+  <link rel="stylesheet" href="../../static/css/styles.css" th:href="@{'css/styles'}"  type="text/css" media="screan"/>
+        
+        
+           <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+                     
+                     
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="/css/styles.css"/>
+    
+     <link rel="stylesheet" href="/css/newstyle.css"/>
+  
+        
+</head>
+<body style=" margin: 0 px; padding: 0%">
+
+<div th:insert="Menu :: navbar"  class="container-fluid" style="padding: 0%; padding-left: 0%; padding-right: 0%; margin: 0 px; width: 100%;"></div>
+
+
+ 
+ 
+    
+<table class="table-responsive  table-striped  "  >
+ <thead>
+
+		<tr> 
+				
+				<th scope="col" >  	 <a class="btn btn-success" th:href="@{'/student/grupi/' + ${perdorues.id} }" th:text=" ' Shiko grupin e studentit. ' ">   </a> 
+    </th>
+    
+    		<th scope="col" >  		 <a class="btn btn-success" th:href="@{'/student/fillimistd/' + ${perdorues.id} }" th:text=" ' Shiko  daten e fillimit te studimeve perkatese studentit. ' ">   </a> 
+    </th>
+    
+    		<th scope="col" >  		 <a class="btn btn-success" th:href="@{'/student/mesatarestdent/' + ${perdorues.id} }" th:text=" ' Shiko mesataren e notave te studentit. ' ">   </a> 
+   	 </th>
+   	 
+   	 	<th scope="col" >  		 <a class="btn btn-success" th:href="@{'/student/data/' + ${perdorues.id} }" th:text=" ' Shiko te dhenat e studentit. ' ">   </a> 
+   	 </th>
+				
+				</tr>
+				
+				</thead>
+				
+				</table>
+   
+   
+<br/>  <br/> <br/>
+   
+    <div th:include="home :: slideshow"  >  </div> 
+    
+     
+   <!--   <div th:insert="home :: slideshow" style=" height: 50%; " >  </div>  -->
+
+<div th:insert="footer :: foter" style="padding-bottom: 0%; margin-bottom: 0%;">  </div>
+     
+ 
+        
+        
+      
+    
+</body>
+</html>

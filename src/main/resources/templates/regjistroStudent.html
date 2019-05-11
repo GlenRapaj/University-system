@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Home Page</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+                     
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+   <link rel="stylesheet" href="/css/styles.css"/>
+   <link rel="stylesheet" href="/css/newstyle.css"/>
+        
+</head>
+<body style=" margin: 0 px;">
+
+
+<div th:insert="Menu :: navbar"  class="container-fluid" style="padding: 0%; padding-left: 0%; padding-right: 0%; margin: 0 px; width: 100%;"></div>
+
+
+
+	<h1>Regjistro Student</h1>
+    <form th:action="@{'/student/regjistro'}" th:object="${regjistroStudentin}" method="post" class="optimizim">
+    	
+    	<table>
+    	
+    	<tbody>
+    	
+    	<tr>
+    	<td>
+    	<label> Name:</label>
+    	</td>
+    	<td>
+         <input type="text" th:field="*{name}" />	
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+       <label>  Email:  </label>
+       </td>
+       <td>
+        <input type="text" th:field="*{lastName}" />
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        <label>  Grupi:  </label>
+        </td>
+        <td>
+        <input type="text" th:field="*{grupi}" />
+        </td>
+        </tr>
+       
+         <tr>
+         <td>
+        <label>  Sa eshte pagesa e kryer:  </label>
+        </td>
+        <td>
+        <input type="text" th:field="*{payment}" />
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+         <label> Emri i fakultetit:   </label>
+         </td>
+         <td>
+        <input type="text" th:field="*{depID.facultyName}" />
+        </td>
+       </tr>
+       
+       <tr>
+       <td>
+         <label>  Emri i departamentit:  </label>
+         </td>
+         <td>
+        <input type="text" th:field="*{depID.departamentName}" />
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+          <label>   adresa: </label>
+          </td>
+          <td>
+        <input type="text" th:field="*{depID.adr}" />
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+         <label>  Data regjistrimit ne universitet:  </label>
+         </td>
+         <td>
+         <input type="date" th:field="*{doj}" />
+         </td>
+       </tr>
+       
+       <tr>
+       <td>
+        <input type="submit" value="Submit" /> 
+        </td>
+        <td>
+        <input type="reset" value="Reset" />
+        </td>
+        </tr>
+        
+        </tbody>
+        </table>
+    </form>
+    
+    
+</body>
+</html>
